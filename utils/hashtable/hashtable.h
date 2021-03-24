@@ -13,7 +13,9 @@ class HashTable {
         HashNode<A, B>** items[tsize];
     public:
         HashTable() : size(0), count(0){}
-        HashTable(const std::pair<A,B> &p[]);
+        HashTable(const std::pair<A,B> &p) : insert(p);
+        HashTable(const std::pair<A,B> &p[]) : insert(p[]);
+        HashTable(const std::pair<A,B> &p[][]) : insert(p[][]);
 	    HashTable(const HashTable&);
         HashTable& operator=(const HashTable&);
         HashTable& operator=(std::pair<A,B> &p);
